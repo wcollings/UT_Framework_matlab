@@ -1,0 +1,14 @@
+*****************************************
+****	UT_L Saturating Inductor Model
+*****************************************
+.subckt UT_L t b
+L1 t b flux = NomL*isatfit*tanh(x/isatfit)
++	Rser = {ESR} Rpar = {EPR} Cpar = {EPC}
+
+.param ESR = 220e-3 ; Equivalent Series Resistance
+.param EPR = 15.74e3; Equivalent Parallel Resistance
+.param EPC = 0.081635e-12 ; Equivalent Parallel Capactiance
+.param NomL = 623e-6; Nominal Inductance at 0 A
+.param isatfit = 53.0873 ; 50% saturation current fit by optimizer
+
+.ends UT_L

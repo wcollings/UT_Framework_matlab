@@ -1,0 +1,21 @@
+Circuit: * C:\Users\andre\Documents\Research\Automated_SPICE_Modeling\UT_Framework_3.0.1\SPICE_Files\foster_test_matlab_pulsetrain.asc
+
+Per .tran options, skipping operating point for transient analysis.
+
+Date: Wed Mar 18 13:03:56 2020
+Total elapsed time: 0.034 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 28941
+traniter = 28941
+tranpoints = 11473
+accept = 9906
+rejected = 1567
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1: 386 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 601 bytes object code size  0.1/0.1/[0.1]
+

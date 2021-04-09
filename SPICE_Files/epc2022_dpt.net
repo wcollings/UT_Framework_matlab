@@ -1,0 +1,23 @@
+* No comment
+  Lcomm N002 d 623u
+  D1 d N002 D
+  Lg g N004 1.6n
+  Rsh 0 N005 0.025
+  XM1 d N004 0 EPC2022
+  C1 N001 N005 600u ic=56.2799
+  R0 P001 N001 0.17984
+  L0 P001 N002 9.2397e-09
+  V1 N003 0 PWL file="gate.csv"
+  Rg g N003 100u
+  cj N002 d 9.5213e-10
+  .model D D
+  .lib C:\Users\usr\Documents\LTspiceXVII\lib\cmp\standard.dio
+  .lib device_models/EPC2022.lib
+  .tran 0 310u 0 1n
+  .lib gate.csv
+  .backanno
+  .end
+             
+                   
+      
+ 

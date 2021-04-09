@@ -1,0 +1,33 @@
+Circuit: * C:\Users\andre\Documents\Research\Automated_SPICE_Modeling\UT_Framework_3.0.1\SPICE_Files\test3.asc
+
+Questionable use of curly braces in "b§rd dx d1 r={v(nd,0)}"
+    Error: undefined symbol in: "[v](nd,0)"
+Questionable use of curly braces in "b§rg gx g1 r={v(ng,0)}"
+    Error: undefined symbol in: "[v](ng,0)"
+Questionable use of curly braces in "b§rs s1 sx r={v(ns,0)}"
+    Error: undefined symbol in: "[v](ns,0)"
+Warning: Multiple definitions of model "cpw41200s020b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s015b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s010b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s008b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s005b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s002b" Type: Diode
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Feb 10 09:29:33 2020
+Total elapsed time: 0.214 seconds.
+
+tnom = 27
+temp = 27
+method = Gear
+totiter = 23542
+traniter = 23536
+tranpoints = 10619
+accept = 7633
+rejected = 2986
+matrix size = 37
+fillins = 18
+solver = Normal
+Matrix Compiler1: 3.11 KB object code size  0.5/0.3/[0.2]
+Matrix Compiler2: 3.19 KB object code size  0.2/0.4/[0.2]
+

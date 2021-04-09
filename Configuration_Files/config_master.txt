@@ -1,0 +1,24 @@
+###################################################################
+#################### Master Configuration File ####################
+###################################################################
+
+######################### Fitting Stages ##########################
+#
+### Each fitting stage should be formatted as follows:
+#	[name_of_fitting_stage]
+#	data	=	data_source_file.csv
+#	config	=	stage_config_file.txt
+#
+# Fitting stage name is unrestricted and should be defined to be
+# have meaning to the user. So long as fitting stages are uniquely
+# named, names will have no impact on code behavior. The config
+# file will contain detail on how the data file should be
+# interpreted.
+#
+
+# Conduction behavior is fit according to the following
+[transient_fitting]
+# data = Test1.csv
+# config=config_Test1.txt
+data 	   = 	Test1_trimmed.csv
+config 	   = 	config_EPC2022.txt

@@ -1,0 +1,6 @@
+.subckt gateDriver m vhigh vlow
+.param v_high=5.45 v_low=-0.01 
+Vhigh_int vhigh m PWL file=gate.csv
+vlow_int vlow m PWL file=gate.csv
+
+.ends

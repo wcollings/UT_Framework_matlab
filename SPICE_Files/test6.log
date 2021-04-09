@@ -1,0 +1,53 @@
+Circuit: * C:\Users\andre\Documents\Research\Automated_SPICE_Modeling\UT_Framework_3.0.1\SPICE_Files\test6.asc
+
+Warning: Multiple definitions of model "cpw41200s020b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s015b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s010b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s008b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s005b" Type: Diode
+Warning: Multiple definitions of model "cpw41200s002b" Type: Diode
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Heightened Def Con from 1.00592e-006 to 1.00592e-006
+Heightened Def Con from 1.10482e-006 to 1.13282e-006
+Heightened Def Con from 2.13241e-005 to 2.13271e-005
+Heightened Def Con from 2.13272e-005 to 2.13288e-005
+Heightened Def Con from 2.13339e-005 to 2.138e-005
+Heightened Def Con from 2.66192e-005 to 2.66692e-005
+Heightened Def Con from 3.19507e-005 to 3.19997e-005
+
+Date: Mon Feb 10 09:36:40 2020
+Total elapsed time: 0.200 seconds.
+
+tnom = 27
+temp = 27
+method = Gear
+totiter = 49738
+traniter = 49366
+tranpoints = 20571
+accept = 13868
+rejected = 6710
+matrix size = 23
+fillins = 6
+solver = Normal
+Matrix Compiler1: 1.39 KB object code size  0.2/0.2/[0.1]
+Matrix Compiler2: off  [0.2]/0.2/0.2
+

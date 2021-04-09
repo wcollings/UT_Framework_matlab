@@ -1,0 +1,21 @@
+Circuit: * C:\Users\andre\Documents\Research\Automated SPICE Modeling\UT_Framework_3.0.1\SPICE_Files\DiodeTest.asc
+
+.OP point found by inspection.
+
+Date: Tue Jan 21 15:01:15 2020
+Total elapsed time: 0.071 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 10590
+traniter = 10590
+tranpoints = 2895
+accept = 2365
+rejected = 530
+matrix size = 2
+fillins = 0
+solver = Normal
+Matrix Compiler1: 36 bytes object code size  0.0/0.0/[0.0]
+Matrix Compiler2: 96 bytes object code size  0.0/0.0/[0.0]
+

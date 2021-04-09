@@ -1,0 +1,46 @@
+* C:\Users\andre\Documents\Research\Automated_SPICE_Modeling\UT_Framework_3.0.1\SPICE_Files\test3.asc
+VBUS N004 N008 600
+RG Gate N007 10
+RBUS N004 N003 1.64m
+L§ESL_G N006 N007 12.87n
+Vpulse N006 0 PWL(0u {Voff} {Start} {Voff} {RiseT1} {Von} {PulseT} {Von} {FallT} {Voff} {offT} {Voff} {RiseT2} {Von} {OnT} {Von} {FallT2} {Voff})
+XU1 Drain N005 NC_01 C4D10120A
+XM1 Drain Gate 0 Fraunhofer
+RSHUNT N008 0 100.8m
+XX1 N002 N001 skin_effect
+LBUS N003 N002 {L_busval}
+Ldiode N001 N005 {Ldiode}
+XL1 N001 Drain UT_L
+
+* block symbol definitions
+.subckt skin_effect 1 2
+L1 2 1 {fp}
+L2 N001 0 {fp}
+R§Damping 0 N001 {rp}
+K1 L1 L2 1
+.include SE.txt
+.ends skin_effect
+
+.param Start = 1u
+.param Voff=-5.3
+.param PulseT = RiseT1+ 10.6u - {slewshift}
+.param FallT = PulseT + 2n + {slewshift}
+.param OffT = FallT + 5.272u - {slewshift}
+.param RiseT2 = OffT + 2n + {slewshift}
+.param OnT = RiseT2+  5.35u - {slewshift}
+.param FallT2 = OnT + 2n + {slewshift}
+.param Von=21.3
+.param RiseT1=Start+100n
+.options method=gear
+.inc Cree Power C4D Packaged SPICE Model Library.lib
+.inc Cree Power CPW4 Bare Die SPICE Model Library.lib
+.tran 30u
+.param T = 25C
+.param L_busval = 42n-8.064291n+10n
+.param Ldiode = 6n
+.options plotabstol 1e-12
+.param slewshift = 1.5n
+.inc Device_Models\Fraunhofer.lib
+.inc UT_L.lib
+.backanno
+.end

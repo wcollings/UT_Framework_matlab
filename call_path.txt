@@ -1,0 +1,15 @@
+main:
+	isolate_transient
+	pattern
+
+isolate_transient:
+	<n/a>
+
+pattern:
+	isolate_transient
+	quck_spice_cost
+	isolate_transient
+	template_pars
+
+template_pars:
+	<n/a>

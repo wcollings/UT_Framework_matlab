@@ -1,0 +1,18 @@
+.SUBCKT LSIC1MO120E0080 Drain Gate Source
+M1 d1 g1 s1 s1 LFUS_Mos
+D2 s1 n1 Cds
+C2 g1 s1  1.05843e-09
+D3 g1 d1 Cgd
+L4 g1 g2  7e-09
+L5 s1 Source  1e-09
+L6 Drain d2  3e-09
+R6 d2 d1 {RDt}
+R1 d2 n1  0.02
+R2 g2 Gate  1.5
+.param RDt=R0*(1+TC1*(T-25))
+.param R0=0.00495176
+.param TC1=0.0926687
+.model LFUS_Mos NMOS(Level=3 l=7e-07 w=2.4 tox=5e-08 xj=4e-07 gamma=0 phi=0.6 rd=0 rs=0 cbd=0 cbs=0 is=1e-660 n=1 pb=0.8 cgbo=0 rsh=0 cj=0 mj=0.5 cjsw=0 mjsw=0.33 js=0 nss=0 nfs=0 tpg=1 ld=0 uo=600 kf=0 af=1 fc=0.5 delta=0 eta=0 tnom=T cgdo=0 cgso=0 theta=0.000859356 vto=3.99692 vmax=1.87768e+06 kappa=1.35903 kp=2.77945e-07)
+.model Cds D( m=0.425456 cjo=1.28855e-09 n=6)
+.model Cgd D( m=0.417654 cjo=1.6388e-10 n=1e8)
+.ENDS LSIC1MO120E0080 

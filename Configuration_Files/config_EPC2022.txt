@@ -1,0 +1,61 @@
+###################################################################
+################## Time-domain Configuration File #################
+###################################################################
+
+# Individual config files should contain a headings "modules"
+# under which handles pointing to the necessary modules are
+# defined, a heading "arguments" under which argument values to be
+# fed into the defined modules are defined, a heading
+# "algorithm_parameters" under which the alrogithm is defined, and
+# a heading "parameters_to_optimize" under which the optimization
+# parameters are defined.
+
+
+# Identify modules for optimization algorithm
+[modules]
+handling = @handling_transient
+objective = @ltspice_call
+cost = @template_matching
+output = @output_transient
+
+# Parameters for optimization algorithm
+[algorithm_parameters]
+algorithm = @pattern
+
+
+# Parameters to optimize
+[parameters_to_optimize]
+# Parameter= min max absolute_min absolute_max gridpoints refinement_perc
+#All parameters
+
+#Parameter= characterized_value perc_- perc_+
+R0 = 0.17 90 100
+Cj = 9.5213e-10 10 300
+L0 = 9.23e-9 50 50
+
+
+# Arguments for modules
+[arguments]
+
+# {smoothing_span}
+#handling = {11 {'time','vds'}}
+handling = {11 {'time','id'}}
+
+# {data, circuit_asc, lib_file, LTSPICE_executable, events, simulation_bound_values} 
+objective = {data, 'C:\Users\usr\Documents\UT_Framework_matlab\SPICE_Files\epc2022_dpt.net',' ', 'C:\Program Files\LTC\LTspiceXVII\XVIIx64.exe', 1, [-100, 1200]}
+
+#objective = {data, 'SPICE_Files\epc2022_dpt.net', 'dummy', 'C:\Program Files\LTC\LTspiceXVII\XVIIx64.exe', 1, [-100, 1200]}
+#objective = {}
+
+# {data, [pos_weight, attenuation_weight, f_weight]}
+#cost = {data, [1,1,1]}
+cost = {}
+
+# {library_file, parameter_names, transient_data, objective_function, objective_arguments}
+output = {'SPICE_Files\epc2022_dpt.net', par_names, data, obj, obj_args}
+#output = {}
+
+# {iteration_limit, display_waitbar}
+#algorithm = {5, 1}
+#algorithm = {5a, 1}
+algorithm = {2,0}

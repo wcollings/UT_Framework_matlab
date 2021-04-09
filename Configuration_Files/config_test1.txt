@@ -1,0 +1,123 @@
+###################################################################
+################## Time-domain Configuration File #################
+###################################################################
+
+# Individual config files should contain a headings "modules"
+# under which handles pointing to the necessary modules are
+# defined, a heading "arguments" under which argument values to be
+# fed into the defined modules are defined, a heading
+# "algorithm_parameters" under which the alrogithm is defined, and
+# a heading "parameters_to_optimize" under which the optimization
+# parameters are defined.
+
+
+# Identify modules for optimization algorithm
+[modules]
+handling = @handling_transient
+objective = @ltspice_call
+cost = @template_matching
+output = @output_transient
+
+# Parameters for optimization algorithm
+[algorithm_parameters]
+algorithm = @pattern
+
+
+# Parameters to optimize
+[parameters_to_optimize]
+;;; Parameter= min max absolute_min absolute_max gridpoints refinement_perc
+;;;All parameters
+
+;Ld = 5e-11 1.5e-10 1e-12 1e-9 3 0.08
+;Lg = 5e-11 1.5e-10 1e-12 1e-9 3 0.08
+;Ls = 5e-11 1.5e-10 1e-12 1e-9 3 0.08
+;kgs = .7    1      0.1 1  3 .08
+;kgd = .7    1      0.1 1  3 .08
+;kds = .7    1      0.1 1  3 .08
+
+;Parameter= characterized_value perc_- perc_+
+;Ld = 0.1 10 10
+;Lg = 4.895 50 50
+;Ls = 2.6 50 50
+;kds = 1 50 50
+;kgs = 1 50 50
+;kdg = 1 50 500
+;rd = 1 99 1000
+;rg = 1 99 1000
+;rs = 1e-3 99 500
+;rdp = 10 50 10000
+
+;Ld = 0.1 10 10
+;Lg = 4.895 30 5
+;Ls = 2.6 10 50
+;kds = 1 30 10
+;;kgs = 1 50 500
+;kgs = 1 50 10
+;kdg = 1 50 10
+;rd = 1 99 1000
+;rg = 1 99 1000
+;;rs = 1e-3 99 500
+;rdp = 10 50 10000
+;rds = 1 99 100000
+
+;Ld = 0.1 10 10
+;Lg = 4.895 30 5
+;Ls = 2.6 10 50
+;kds = 1 30 10
+;kgs = 1 50 500
+;kdg = 1 50 10
+;r_dp = 10 50 10000
+;r_ds = 1 99 100000
+;r_gs = 1 99 1000
+
+;Ld = 0.1 10 10
+;Lg = 3.645 10 10
+;Ls = 3.85 10 10
+;kds = 0.875 10 10
+;kgs = 5 10 10
+;kdg = 1 10 10
+;rd = 1.1328 10 10
+;rg = 22 10 10
+;;rs = 1e-3 99 500
+;rdp = 16.6406 10 10
+
+;Ld = 0.1 99 1000
+Lg = 4.895 50 50
+Ls = 2.6 50 50
+kds = 1 50 0
+kgs = 1 50 400
+;kgs = 1 50 0
+kdg = 1 50 0
+r_dp = 10 90 100
+r_gp = 10 90 100
+r_sp = 20 95 10000000
+c_dp = 1 0 100000
+c_gp = 1 0 100000
+c_sp = 1 0 100000
+r_ds = 1e-4 0 10000000
+;r_gs = 1e-4 0 10000000
+r_dg = 1e-4 0 10000000
+
+# Arguments for modules
+[arguments]
+
+; {smoothing_span}
+;handling = {11 {'time','vds'}}
+handling = {11 {'time','id'}}
+
+; {data, circuit_asc, lib_file, LTSPICE_executable, events, simulation_bound_values} 
+objective = {data, 'SPICE_Files/Test2.asc', 'SPICE_Files/MSA12080A.lib', 'C:\Program Files\LTC\LTspiceXVII\XVIIx64.exe', 1, [-100, 1200]}
+objective = {}
+
+; {data, [pos_weight, attenuation_weight, f_weight]}
+;cost = {data, [1,1,1]}
+cost = {}
+
+; {library_file, parameter_names, transient_data, objective_function, objective_arguments}
+;output = {'SPICE_Files/MSA12080A.lib', par_names, data, obj, obj_args}
+output = {}
+
+;; {iteration_limit, display_waitbar}
+;algorithm = {5, 1}
+;algorithm = {5a, 1}
+algorithm = {}
